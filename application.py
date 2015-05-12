@@ -1,3 +1,4 @@
+"""Guess Number, we go playing!"""
 # Aqui escribe tu codigo
 
 import random
@@ -10,17 +11,21 @@ COUNT = 0
 NEW_GAME = True
 
 while NEW_GAME == True:
-    NUMBER_RANDOM = random.randint(1,20)
+    NUMBER_RANDOM = random.randint(1, 20)
     for COUNT in range(1, 5):
         print NUMBER_RANDOM
-        GUESS = int(raw_input ("Insert a Number: "))
-        if GUESS == NUMBER_RANDOM:
-            print "You win!"
-            break
-        elif GUESS < NUMBER_RANDOM:
-            print "Wrong.Your number is very low. Try again "
-        else:
-            print "Wrong.Your number is very high. Try again"
+        try:
+            GUESS = int(raw_input("Insert a Number: "))
+            if GUESS == NUMBER_RANDOM:
+                print "You win!"
+                break
+            elif GUESS < NUMBER_RANDOM:
+                print "Wrong.Your number is very low. Try again "
+            else:
+                print "Wrong.Your number is very high. Try again"
+        except ValueError:
+            print "Enter only numbers"
+
 
     ANSWER = True
     while ANSWER == True:
