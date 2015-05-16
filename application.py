@@ -12,20 +12,27 @@ while NEW_GAME == True: # While New Game is running true to me.
     TURN = 4 #total shift.
     for COUNT in range(1, TURN+1): # In the range of one will add to the variable TURN a number.
         print NUMBER_RANDOM # Here it will print the random number.
-        try:
-            print "    Number shift: ", COUNT # Here will show a number shift and it will print the random number.
-            if COUNT < 5: #Condition if. Initiate shift count. 
+        try:# Here will show a number shift and it will print the random number.
+            print "    Number shift: ", COUNT
+            if COUNT < 5: #Condition if. Initiate shift count.
                 GUESS = int(raw_input("Insert a Number: ")) # Here will indicate the shift number.
-                while GUESS < 0 or GUESS >= 20: # While the number entered by the user is less than 0 or equal to or greater than 20 me run this.
-                    GUESS = int(raw_input("Insert a Number: ")) #Here will indicate the shift number.
-                if GUESS == NUMBER_RANDOM: #If the number entered by the user is equal of the number randow ,it will print "You win!" in the next line.
+# While the number entered by the user is less than 0 or equal to or greater than 20 me run this.
+                while GUESS < 0 or GUESS >= 20:
+     #Here will indicate the shift number.
+                    GUESS = int(raw_input("Insert a smaller Number: "))
+#if The number equals the random number will print "You win!."
+                if GUESS == NUMBER_RANDOM:
                     print "You win!"
-                    break # Here it will cut the program if the condition is met.
-                elif GUESS < NUMBER_RANDOM: # If the above condition is not met this condition it will run.
-                    if COUNT < 4: if #The count the condition  "if" is less than four it will print the following line
+                    break # Here it will cut the program ,if is met.
+# If the above condition is not met this condition it will run.
+                elif GUESS < NUMBER_RANDOM:
+ #The count the condition "if" is less than four it will print the next line.
+                    if COUNT < 4:
                         print "Wrong.Your number is very low."
-                elif GUESS > NUMBER_RANDOM: # If the above condition is not met this condition it will run.
-                    if COUNT < 4:#The count the condition  "if" is less than four it will print the following line
+# If the above condition is not met this condition it will run.
+                elif GUESS > NUMBER_RANDOM:
+#The count the condition  "if" is less than four it will print the following line
+                    if COUNT < 4:
                         print "Wrong.Your number is very high."
                 COUNT += 1 # Here it will add a number  more at the count
             if COUNT == 5: # If the count is equal to 5 it will print.
@@ -37,7 +44,7 @@ while NEW_GAME == True: # While New Game is running true to me.
     while ANSWER == True:
         print "Do you want to play again? y/n: " # Here will ask the user.
         PLAY_AGAIN = raw_input('> ')#Here the user that enter your answer.
-        PLAY_AGAIN = PLAY_AGAIN.lower() # This will convert the user's response to lowercase.
+        PLAY_AGAIN = PLAY_AGAIN.lower() # This will convert the user's response to lowercase
         if PLAY_AGAIN == "y": #
             ANSWER = False
             NEW_GAME = True
